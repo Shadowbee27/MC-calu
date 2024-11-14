@@ -1,6 +1,6 @@
 use crate::lib::input;
 use std::process::exit;
-pub mod lib{
+pub mod lib {
     pub mod input;
 }
 pub mod opperations {
