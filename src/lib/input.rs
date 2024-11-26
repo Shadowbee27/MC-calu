@@ -16,7 +16,7 @@ pub fn portal_input() -> [f64; 2] {
                 match z {
                     Ok(ok) => {
                         let z = ok;
-                        let cords =[x,z];
+                        let cords = [x, z];
                         return cords;
                     }
                     Err(e) => println!("Error: ({})", e),
