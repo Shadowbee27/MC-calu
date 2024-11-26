@@ -1,7 +1,6 @@
 use crate::lib::input;
 use std::process::exit;
 pub mod lib {
-    pub mod check_for_error;
     pub mod input;
 }
 pub mod opperations {
