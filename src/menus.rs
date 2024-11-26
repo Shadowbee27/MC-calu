@@ -1,12 +1,25 @@
-use crate::{input, main, opperations::item_opperations, opperations::portal_opperations};
-
+use crate::{input, opperations::item_opperations, opperations::portal_opperations};
+use std::process::exit;
+pub fn main_menu(){
+    println!("Enter:\n 1 => portal linking\n 2 => item operations\n 3 => quit");
+    let doing = input::menu_input();
+    match doing.trim() {
+        "1" => portal_input(),
+        "2" => item_operations_input(),
+        "3" => exit(0),
+        _ => {
+            println!("Invalid Input");
+            main_menu()
+        }
+    }
+}
 pub fn portal_input() {
     println!("Please enter to where the portal should be connected?:\n 1 => to nether \n 2 => to overworld \n 3 => menu ");
     let dim = input::menu_input();
     match dim.trim() {
         "1" => portal_opperations::portal_to_nether(),
         "2" => portal_opperations::portal_to_overworld(),
-        "3" => main(),
+        "3" => main_menu(),
         _ => {
             println!("Please enter a dimension");
             portal_input()
@@ -27,7 +40,7 @@ pub fn item_operations_input() {
         "8" => item_opperations::dchests_to_stacks(),
         "9" => item_opperations::dchests_to_fullshulker(),
         "10" => item_opperations::fullshulker_to_dchests(),
-        "11" => main(),
+        "11" => main_menu(),
         _ => {
             println!("Invalid Input");
             item_operations_input()
