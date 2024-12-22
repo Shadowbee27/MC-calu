@@ -30,16 +30,16 @@ pub fn item_operations_input() {
     println!("Enter:\n 1 => stacks to items\n 2 => items to stacks\n 3 => items to shulkers\n 4 => Shulker to items\n 5 => items_to_dchests\n 6 => dchests_to_items\n 7 => stacks_to_dchests\n 8 => dchests_to_stacks\n 9 => dchests_to_fullshulker\n 10 => fullshulker_to_dchests\n 11 => menu");
     let doing = input::menu_input();
     match doing.trim() {
-        "1" => item_opperations::stack_to_items(),
-        "2" => item_opperations::items_to_stack(),
-        "3" => item_opperations::items_to_shulker(),
-        "4" => item_opperations::shulker_to_items(),
-        "5" => item_opperations::items_to_dchests(),
-        "6" => item_opperations::dchests_to_items(),
-        "7" => item_opperations::stacks_to_dchests(),
-        "8" => item_opperations::dchests_to_stacks(),
-        "9" => item_opperations::dchests_to_fullshulker(),
-        "10" => item_opperations::fullshulker_to_dchests(),
+        "1" => item_opperations::multiplication(64.0, "stack".to_string(),"items".to_string() ),
+        "2" => item_opperations::division(64.0,"items".to_string(), "stack".to_string() ),
+        "3" => item_opperations::division(1728.0,"items".to_string(), "shulkerboxes".to_string() ),
+        "4" => item_opperations::multiplication(1728.0,"Shulkerboxes".to_string(), "items".to_string() ),
+        "5" => item_opperations::division(3456.0, "items".to_string(),"Double Chests".to_string() ),
+        "6" => item_opperations::multiplication(3456.0,"Double Chests".to_string(), "items".to_string() ),
+        "7" => item_opperations::division(54.0, "stack".to_string(), "Double Chests".to_string() ),
+        "8" => item_opperations::multiplication(54.0,"Double Chests".to_string(), "items".to_string() ),
+        "9" => item_opperations::multiplication(93312.0,"Shulkerboxes".to_string(), "Double Chests".to_string() ),
+        "10" => item_opperations::division(93312.0, "Double Chests".to_string(),"Shulkerboxes".to_string() ),
         "11" => main_menu(),
         _ => {
             println!("Invalid Input");

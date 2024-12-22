@@ -1,72 +1,16 @@
-use crate::{input, menus};
+use crate::{lib, menus};
 
-pub fn stack_to_items() {
-    println!("Please enter the stack count that you want to turn into items");
-    let mut ic = input::storage_input();
-    ic *= 64.0;
-    println!("the item count is {}", ic);
+pub fn division(divisor: f64, base:String, result:String) {
+    println!("Please enter the amount of {base} that you want to convert to {result}");
+    let dividend = lib::input::storage_input();
+    let quotient = dividend/divisor;
+    println!("The amount of {result} is {quotient}");
     menus::item_operations_input()
 }
-pub fn items_to_stack() {
-    println!("Please enter the item count that you want to turn into stacks");
-    let mut sc = input::storage_input();
-    sc /= 64.0;
-    println!("the stack count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn items_to_shulker() {
-    println!("Please enter the item count that you want to turn into shulkerboxes");
-    let mut sc = input::storage_input();
-    sc /= 1728.0;
-    println!("the shulker count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn shulker_to_items() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc *= 1728.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn items_to_dchests() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc /= 3456.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn dchests_to_items() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc *= 3456.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn stacks_to_dchests() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc /= 54.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn dchests_to_stacks() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc *= 54.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn dchests_to_fullshulker() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc *= 93312.0;
-    println!("the item count is {}", sc);
-    menus::item_operations_input()
-}
-pub fn fullshulker_to_dchests() {
-    println!("Please enter the shulker count that you want to turn into items");
-    let mut sc = input::storage_input();
-    sc /= 93312.0;
-    println!("the item count is {}", sc);
+pub fn multiplication(factor1:f64, base:String, result:String) {
+    println!("Please enter the amount of {base} that you want to convert to {result}");
+    let factor2 = lib::input::storage_input();
+    let product = factor1*factor2;
+    println!("The amount of {result} is {product}");
     menus::item_operations_input()
 }
